@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "build": "tsc && sudo npm link"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,12 @@
     "class",
     "json"
   ],
+  "bin": {
+    "jsonts": "bin/jsonts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Moein Hosseini",
   "license": "MIT",
   "bugs": {
@@ -26,5 +33,8 @@
   "homepage": "https://github.com/mrdimaan/jsonts#readme",
   "devDependencies": {
     "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "arg": "^4.1.1"
   }
 }
