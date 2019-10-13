@@ -1,0 +1,30 @@
+{
+  "name": "jsonts",
+  "version": "1.0.0",
+  "description": "A tool to convert json to complete customized typescript class.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "prepare": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrdimaan/jsonts.git"
+  },
+  "keywords": [
+    "ts",
+    "typescript",
+    "class",
+    "json"
+  ],
+  "author": "Moein Hosseini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrdimaan/jsonts/issues"
+  },
+  "homepage": "https://github.com/mrdimaan/jsonts#readme",
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
+}
