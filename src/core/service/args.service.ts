@@ -3,20 +3,13 @@ import arg from 'arg';
 
 export function argsHaveError(args: any): boolean {
     if (!args.input) {
-        console.error('Please specify both --input and --output to perform the action!');
+        console.error('Please specify --input to perform the action!');
         return true;
     }
 
     if (!args.input.includes('.json')) {
         console.error('Input must be json file!');
         return true;
-    }
-
-    if (args.output) {
-        if (!args.output.includes('.ts')) {
-            console.error('Output must be a typescript file!');
-            return true;
-        }
     }
 
     if (args.targetCase) {
@@ -37,13 +30,11 @@ export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
     const args = arg(
         {
             '--input': String,
-            '--output': String,
             '--title': String,
             '--comment': Boolean,
             '--targetCase': String,
             '--constructor': Boolean,
             '-i': '--input',
-            '-o': '--output',
             '-t': '--title',
             '-c': '--comment',
         },
@@ -53,7 +44,6 @@ export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
     );
     return {
         input: args['--input'] || '',
-        output: args['--output'] || '',
         title: args['--title'] || '',
         comment: args['--comment'] || false,
         targetCase: args['--targetCase'] || '',
