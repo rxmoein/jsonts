@@ -26,28 +26,28 @@ FILE: test.js
 {
 	"Name":"string",
 	"family":"string",
-	"age": 25,
+	"Age": 25,
 	"isMale": false
 }
 ```
 COMMAND:
 ```
-jsonts -i ~/test.json -o file.ts -t food --comment
+jsonts -i ~/test.json -t Person --comment
 ```
 And result will be printed in terminal / cmd:
 ```ts
-export class Food {
+export class Person {
     age: number;
     name: string;
     family: string;
     isMale: boolean;
 
     /**
-     * The default constructor of food class
+     * The default constructor of person class
      * @param obj prepared object
      */
     constructor(obj: any) {
-        this.age = obj.age
+        this.age = obj.Age
         this.name = obj.Name
         this.family = obj.family
         this.isMale = obj.isMale
