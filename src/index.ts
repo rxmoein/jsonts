@@ -1,4 +1,6 @@
 import { argsHaveError, parseArgumentsIntoOptions } from './core/service/args.service';
+import convertOptions from './core/defaults/convert-options';
+import { convert } from './core/service/convert.service';
 import { readJson } from './core/service/utils.service';
 import intro from './core/defaults/intro';
 
@@ -14,12 +16,10 @@ export function cli(args: string[]) {
         return;
     }
 
-    console.log(options);
-
     try {
         const input = readJson(options.input)
-
-        console.log('input: ', input);
+        const output = convert(input, convertOptions);
+        console.log(output);
     } catch (error) {
         console.log("Input json file is invalid or unable to read it.");
     }
