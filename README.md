@@ -20,7 +20,7 @@ OPTIONS
 ```
 
 ## Example
-FILE: test.js
+FILE: test.json
 
 ```json
 {
