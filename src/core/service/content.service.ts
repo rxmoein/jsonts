@@ -23,7 +23,7 @@ export function generateConstructorHeader(output: string[], options: ConvertOpti
 
 export function generateConstructorContent(output: string[], options: ConvertOptions, fields: Field[]) {
     for (const field of fields) {
-        output.push(`this.${convertCase(field.name, options.targetCase)} = obj.${field.name}`);
+        output.push(`        this.${convertCase(field.name, options.targetCase)} = obj.${field.name}`);
     }
 }
 
