@@ -1,6 +1,6 @@
 export interface ConvertOptions {
     title: string;
-    comments: boolean;
+    comment: boolean;
     targetCase: 'PascalCase' | 'CamelCase' | 'Underscore';
     constructor: boolean;
 }

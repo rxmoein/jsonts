@@ -2,7 +2,7 @@ import { ConvertOptions } from "../models/convert.mode";
 
 const options: ConvertOptions = {
     title: 'MyModel',
-    comments: false,
+    comment: false,
     targetCase: 'CamelCase',
     constructor: true,
 }
