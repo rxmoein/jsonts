@@ -3,4 +3,7 @@ export interface CliOptions {
     title: string;
     comment: boolean;
     targetCase: string;
+    checkFields: boolean;
+    constructor: boolean;
+    jsonMethod: boolean;
 }

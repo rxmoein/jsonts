@@ -34,6 +34,8 @@ export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
             '--comment': Boolean,
             '--targetCase': String,
             '--constructor': Boolean,
+            '--checkFields': Boolean,
+            '--jsonMethod': Boolean,
             '-i': '--input',
             '-t': '--title',
             '-c': '--comment',
@@ -47,5 +49,8 @@ export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
         title: args['--title'] || '',
         comment: args['--comment'] || false,
         targetCase: args['--targetCase'] || '',
+        checkFields: args['--checkFields'] || false,
+        constructor: args['--constructor'] || false,
+        jsonMethod: args['--jsonMethod'] || false,
     };
 }

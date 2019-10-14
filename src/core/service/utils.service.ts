@@ -51,7 +51,7 @@ export function overrideOptions(initial: any, target: any): ConvertOptions {
     for (const key in target) {
         if (target.hasOwnProperty(key)) {
             const element = target[key];
-            if (element) {
+            if (element !== undefined && element !== null && element !== '') {
                 result[key] = element
             }
         }

@@ -3,4 +3,6 @@ export interface ConvertOptions {
     comment: boolean;
     targetCase: 'PascalCase' | 'CamelCase' | 'Underscore';
     constructor: boolean;
+    checkFields: boolean;
+    jsonMethod: boolean;
 }

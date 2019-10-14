@@ -4,7 +4,9 @@ const options: ConvertOptions = {
     title: 'MyModel',
     comment: false,
     targetCase: 'CamelCase',
-    constructor: true,
+    constructor: false,
+    checkFields: false,
+    jsonMethod: false,
 }
 
 export default options;
