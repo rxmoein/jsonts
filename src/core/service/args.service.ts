@@ -2,7 +2,7 @@ import { CliOptions } from '../models/cli.model';
 import arg from 'arg';
 
 export function argsHaveError(args: any): boolean {
-    if (!args.input || !args.output) {
+    if (!args.input) {
         console.error('Please specify both --input and --output to perform the action!');
         return true;
     }
@@ -12,9 +12,11 @@ export function argsHaveError(args: any): boolean {
         return true;
     }
 
-    if (!args.output.includes('.ts')) {
-        console.error('Output must be a typescript file!');
-        return true;
+    if (args.output) {
+        if (!args.output.includes('.ts')) {
+            console.error('Output must be a typescript file!');
+            return true;
+        }
     }
 
     if (args.targetCase) {

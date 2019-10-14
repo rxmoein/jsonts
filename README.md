@@ -4,7 +4,7 @@ A tool to convert json to complete customized typescript class.
 ## Install
 
 ```
-npm install --global jsonts
+npm install --global @smoein/jsonts
 ```
 ## Usage
 ```
