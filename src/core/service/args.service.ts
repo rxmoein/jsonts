@@ -1,5 +1,5 @@
-import arg from 'arg';
 import { CliOptions } from '../models/cli.model';
+import arg from 'arg';
 
 export function argsHaveError(args: any): boolean {
     if (!args.input || !args.output) {
@@ -17,6 +17,17 @@ export function argsHaveError(args: any): boolean {
         return true;
     }
 
+    if (args.targetCase) {
+        if (!(
+            args.targetCase === 'PascalCase'
+            || args.targetCase === 'CamelCase'
+            || args.targetCase === 'Underscore'
+        )) {
+            console.error('"targetCase" must be one of "PascalCase", "CamelCase", "Underscore"!');
+            return true;
+        }
+    }
+
     return false;
 }
 
@@ -25,8 +36,14 @@ export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
         {
             '--input': String,
             '--output': String,
+            '--title': String,
+            '--comment': Boolean,
+            '--targetCase': String,
+            '--constructor': Boolean,
             '-i': '--input',
             '-o': '--output',
+            '-t': '--title',
+            '-c': '--comment',
         },
         {
             argv: rawArgs.slice(2),
@@ -35,5 +52,8 @@ export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
     return {
         input: args['--input'] || '',
         output: args['--output'] || '',
+        title: args['--title'] || '',
+        comment: args['--comment'] || false,
+        targetCase: args['--targetCase'] || '',
     };
 }

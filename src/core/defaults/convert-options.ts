@@ -1,4 +1,10 @@
-export default {
+import { ConvertOptions } from "../models/convert.mode";
+
+const options: ConvertOptions = {
     title: 'MyModel',
-    comments: true
-};
+    comments: false,
+    targetCase: 'CamelCase',
+    constructor: true,
+}
+
+export default options;

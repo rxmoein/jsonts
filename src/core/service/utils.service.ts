@@ -1,4 +1,5 @@
 import { ConvertOptions } from '../models/convert.mode';
+import { CliOptions } from '../models/cli.model';
 import { Field } from '../models/field.model';
 import fs from 'fs';
 
@@ -43,4 +44,17 @@ export function detectValueType(value: any): string {
     }
 
     return 'skip';
+}
+
+export function overrideOptions(initial: any, target: any): ConvertOptions {
+    const result = JSON.parse(JSON.stringify(initial))
+    for (const key in target) {
+        if (target.hasOwnProperty(key)) {
+            const element = target[key];
+            if (element) {
+                result[key] = element
+            }
+        }
+    }
+    return result;
 }
