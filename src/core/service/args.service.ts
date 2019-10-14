@@ -1,4 +1,5 @@
 import arg from 'arg';
+import { CliOptions } from '../models/cli.model';
 
 export function argsHaveError(args: any): boolean {
     if (!args.input || !args.output) {
@@ -19,7 +20,7 @@ export function argsHaveError(args: any): boolean {
     return false;
 }
 
-export function parseArgumentsIntoOptions(rawArgs: any) {
+export function parseArgumentsIntoOptions(rawArgs: any): CliOptions {
     const args = arg(
         {
             '--input': String,
