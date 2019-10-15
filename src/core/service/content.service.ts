@@ -91,7 +91,7 @@ export function generateJSONHeader(output: string[], options: ConvertOptions) {
 }
 
 export function generateJSONContent(output: string[], options: ConvertOptions, fields: Field[]) {
-    output.push(`        const output: any = {}`);
+    output.push(`        const output: any = {};`);
     output.push(``);
 
     for (const field of fields) {
@@ -99,5 +99,5 @@ export function generateJSONContent(output: string[], options: ConvertOptions, f
     }
 
     output.push(``);
-    output.push(`        return JSON.stringify(output)`);
+    output.push(`        return JSON.stringify(output);`);
 }
