@@ -1,6 +1,6 @@
 {
   "name": "@smoein/jsonts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tool to convert json to complete customized typescript class.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
