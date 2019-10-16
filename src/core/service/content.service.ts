@@ -95,7 +95,7 @@ export function generateJSONContent(output: string[], options: ConvertOptions, f
     output.push(``);
 
     for (const field of fields) {
-        output.push(`        output['${field.name}'] = this.${convertCase(field.name, options.targetCase)};`);
+        output.push(`        output.${field.name} = this.${convertCase(field.name, options.targetCase)};`);
     }
 
     output.push(``);
