@@ -1,11 +1,6 @@
 # JSONTS
 A tool to convert json to complete customized typescript class.
 
-## Install
-
-```
-npm install --global @smoein/jsonts
-```
 ## Usage
 ```
 JSONTS
